@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Instagram Mass DM Bot</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Instagram Mass DM Bot</h1>
+    <form id="login-form">
+        <input type="text" name="username" placeholder="Instagram Username">
+        <input type="password" name="password" placeholder="Instagram Password">
+        <button type="submit">Login</button>
+    </form>
+    <form id="2fa-form" style="display: none;">
+        <input type="text" name="code" placeholder="2FA Code">
+        <button type="submit">Submit</button>
+    </form>
+    <form id="target-form" style="display: none;">
+        <input type="text" name="target_username" placeholder="Target Username">
+        <select name="target_list">
+            <option value="followers">Followers</option>
+            <option value="following">Following</option>
+        </select>
+        <button type="submit">Submit</button>
+    </form>
+    <form id="message-form" style="display: none;">
+        <textarea name="message" placeholder="Message"></textarea>
+        <input type="number" name="num_recipients" placeholder="Number of Recipients">
+        <input type="number" name="delay_min" placeholder="Delay Min (seconds)">
+        <input type="number" name="delay_max" placeholder="Delay Max (seconds)">
+        <button type="submit">Submit</button>
+    </form>
+    <button id="start-button" style="display: none;">Start</button>
+    <div id="logs"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
