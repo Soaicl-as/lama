@@ -3,14 +3,13 @@ from instagram import InstagramBot
 from utils import send_messages
 from config import Config
 import threading
-import os
 
 app = Flask(__name__)
 bot = InstagramBot()
 
 @app.route("/")
 def index():
-    return render_template("../frontend/index.html")
+    return render_template("frontend/index.html")
 
 @app.route("/login", methods=["POST"])
 def login():
@@ -58,5 +57,4 @@ def start():
     return jsonify({"success": True})
 
 if __name__ == "__main__":
-    port = int(os.environ.get('PORT', 5000))
-    app.run(host='0.0.0.0', port=port)
+    app.run(debug=True)
