@@ -8,6 +8,8 @@ databases:
     envVars:
       - key: PYTHONUNBUFFERED
         value: 1
+      - key: PORT
+        value: 5000
     routes:
       - type: rewrite
         source: /*
