@@ -1,0 +1,19 @@
+databases:
+  - name: instagram-mass-dm-bot
+    type: web
+    env: python
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: python backend/app.py
+    plan: free
+    envVars:
+      - key: PYTHONUNBUFFERED
+        value: 1
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+      - type: proxy
+        source: /api/*
+        destination: http://localhost:5000/*
+    regions:
+      - oregon
